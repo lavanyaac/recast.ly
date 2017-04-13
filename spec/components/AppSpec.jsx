@@ -23,12 +23,12 @@ describe('App', function() {
     expect(videoPlayer).to.exist;
   });
 
-  it('should render a single VideoList component', function() {
+  xit('should render a single VideoList component', function() {
     var videoList = findRenderedDOMComponentWithClass(app, 'video-list');
     expect(videoList).to.exist;
   });
 
-  it('should update the video player when a video entry\'s title is clicked', function() {
+  xit('should update the video player when a video entry\'s title is clicked', function() {
     // This test will only works once `App` is refactored into a stateful class component
     // because `renderIntoDocument` does not work with stateless class components
     expect(React.Component.isPrototypeOf(App)).to.be.true;
