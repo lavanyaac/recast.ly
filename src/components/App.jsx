@@ -1,22 +1,21 @@
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		// this.state = {
-		// 	videos: this.props;
-		// 	// currentVideo:'',
-		// 	// videos:this.props.searchYouTube();
-		// };
+		this.state = {
+			currentVideo:'',
+			videos: []
+		};
 	}
 
 	render() {
-		console.log('hellllo', this.props);
+		// console.log('hellllo', this.props);
 		return (
 		  <div>
 		   <Nav />
-		  //   <div className="col-md-7">
-		  //     <VideoPlayer />
-		  //   </div>
-		   <div>
+		    <div className="col-md-7">
+		      <VideoPlayer />
+		    </div>
+      <div>
 		      <VideoList videos = {this.state.videos}/>
 		    </div>
 		  </div>
