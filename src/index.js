@@ -1,6 +1,2 @@
-// TODO: Render the `App` component to the DOM
 
-// console.log("hhehre", window.exampleVideoData);
-ReactDOM.render(<App videodata={exampleVideoData}/>, document.getElementById("app"));
-
-//<App videodata={exampleVideoData}/>
+ReactDOM.render(<App searchYouTube={searchYouTube} API_KEY={YOUTUBE_API_KEY}/>, document.getElementById("app"));

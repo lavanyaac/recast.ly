@@ -1,8 +1,3 @@
-// $(document).ready(function(){
-//   searchYouTube();
-// })
-
-
 var searchYouTube = ({query='dog', max=5, key}, callback) => {
 
   var url = 'https://www.googleapis.com/youtube/v3/search';
@@ -15,13 +10,19 @@ var searchYouTube = ({query='dog', max=5, key}, callback) => {
     type:'video'
   };
 
-  var results = $.getJSON(url,params, function(){
+ $.getJSON(url,params, function(){
     console.log('sucess');
   })
-  .done(function(data){
-    console.log("inside done");
-    console.log(data);
+  .done(({items}) => {
+    if(callback){
+      callback(items);
+    }
   })
+  .fail((responseJSON) => {
+    responseJSON.error.errors.forEach((err) =>
+      console.error(err)
+      );
+  });
 };
 
 window.searchYouTube = searchYouTube;
